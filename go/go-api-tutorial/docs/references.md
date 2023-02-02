@@ -1,0 +1,4 @@
+- [TechWithTim - Go API tutorial](https://www.youtube.com/watch?v=bj77B59nkTQ)
+- [Code In This Video](https://github.com/techwithtim/Go-API-Tutorial)
+- [Gin Framework Docs](https://github.com/gin-gonic/gin)
+- [Go For Beginners Tutorial Series](https://www.youtube.com/watch?v=75lJD)
