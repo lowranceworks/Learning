@@ -17,44 +17,40 @@ locals {
     }
   }
 
-  //
-  map_of_maps_to_list_of_maps = [for map in local.fruit_map: map]
+  list_of_maps = [for map in local.fruit_map: map]
 
-  //
-  map_keys_to_list_of_keys = [for k, v in local.fruit_map: k]
+  list_of_map_key_attributes = [for k, v in local.fruit_map: k]
 
-  //
-  map_values_to_list_of_values = [for k, v in local.fruit_map: v]
+  list_of_map_value_attributes = [for k, v in local.fruit_map: v]
 
-  //
-  map_value_attributes_to_list_of_attributes = [for k, v in local.fruit_map: v.color]
+  list_of_each_attribute_inside_each_map_value_attribute = [for k, v in local.fruit_map: v.color]
 
 }
 
-output ist_of_maps {
-  value       = local.map_of_maps_to_list_of_maps
+output list_of_maps {
+  value       = local.list_of_maps
   sensitive   = false
-  description = "a list of maps."
+  description = "Returns a list of maps without the key/value."
   depends_on  = []
 }
 
-output list_of_map_keys {
-  value       = local.map_keys_to_list_of_keys
+output list_of_map_key_attributes {
+  value       = local.list_of_map_key_attributes
   sensitive   = false
-  description = "a list of keys."
+  description = "Returns a list of strings taken from the key attribute of each map."
   depends_on  = []
 }
 
-output list_of_map_values {
-  value       = local.map_values_to_list_of_values
+output list_of_map_value_attributes {
+  value       = local.list_of_map_value_attributes
   sensitive   = false
-  description = "a list of values."
+  description = "Returns the same output as local.list_of_maps."
   depends_on  = []
 }
 
-output list_of_map_values_attributes {
-  value       = local.map_value_attributes_to_list_of_attributes
+output list_of_each_attribute_inside_each_map_value_attribute {
+  value       = local.list_of_each_attribute_inside_each_map_value_attribute
   sensitive   = false
-  description = "a list of values."
+  description = "Returns a list of strings taken from the value attributed of each map nested inside the fruit_map."
   depends_on  = []
 }
