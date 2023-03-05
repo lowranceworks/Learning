@@ -29,28 +29,20 @@ locals {
 
 output list_of_maps {
   value       = local.list_of_maps
-  sensitive   = false
-  description = "Returns a list of maps without the key/value."
-  depends_on  = []
+  description = "Returns a list of each map in fruit_maps without the key/value."
 }
 
 output list_of_map_key_attributes {
   value       = local.list_of_map_key_attributes
-  sensitive   = false
-  description = "Returns a list of strings taken from the key attribute of each map."
-  depends_on  = []
+  description = "Returns a list of strings taken from the key attribute of each map in fruit_maps."
 }
 
 output list_of_map_value_attributes {
   value       = local.list_of_map_value_attributes
-  sensitive   = false
-  description = "Returns the same output as local.list_of_maps."
-  depends_on  = []
+  description = "Returns a list of each map in fruit_maps without the key/value (the same output as local.list_of_maps)."
 }
 
 output list_of_each_attribute_inside_each_map_value_attribute {
   value       = local.list_of_each_attribute_inside_each_map_value_attribute
-  sensitive   = false
-  description = "Returns a list of strings taken from the value attributed of each map nested inside the fruit_map."
-  depends_on  = []
+  description = "Returns a list of strings taken from the value attribute of each map nested inside the fruit_map."
 }
