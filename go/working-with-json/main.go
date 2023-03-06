@@ -24,7 +24,19 @@ func main() {
 	fmt.Printf("%+v\n\n", book) // {Title:Learning Go Author:{Name:Josh Lowrance Age:28 Developer:true}}
 
 	// convert book struct into JSON string
-	byteArray, err := json.Marshal(book)
+	byteArray, err := json.MarshalIndent(book, "", "    ")
+	/*
+		JSON string:
+		{
+			"title": "Learning Go",
+			"author": {
+				"name": "Josh Lowrance",
+				"age": 28,
+				"is_developer": true
+			}
+		}
+	*/
+
 	if err != nil {
 		fmt.Println(err)
 	}
