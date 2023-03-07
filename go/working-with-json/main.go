@@ -5,42 +5,20 @@ import (
 	"fmt"
 )
 
-type Book struct {
-	Title  string `json:"title"`
-	Author Author `json:"author"` // "Author string" will no longer work. Declare that you are using the "Author" struct.
-}
-
-type Author struct {
-	Name      string `json:"name"`
-	Age       int    `json:"age"`
-	Developer bool   `json:"is_developer"`
+type SensorReading struct {
+	Name     string `json:"name"`
+	Capacity int    `json:"capacity"`
+	Time     string `json:"time"`
 }
 
 func main() {
-	author := Author{Name: "Josh Lowrance", Age: 28, Developer: true}
-	book := Book{Title: "Learning Go", Author: author}
 
-	fmt.Println("book struct:")
-	fmt.Printf("%+v\n\n", book) // {Title:Learning Go Author:{Name:Josh Lowrance Age:28 Developer:true}}
-
-	// convert book struct into JSON string
-	byteArray, err := json.MarshalIndent(book, "", "    ")
-	/*
-		JSON string:
-		{
-			"title": "Learning Go",
-			"author": {
-				"name": "Josh Lowrance",
-				"age": 28,
-				"is_developer": true
-			}
-		}
-	*/
-
+	jsonString := `{"name": "battery sensor", "capacity": 40, "time": "2023-03-21T19:08:27Z"}`
+	var reading SensorReading
+	err := json.Unmarshal([]byte(jsonString), &reading)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Println("JSON string:")
-	fmt.Println(string(byteArray)) // {"title":"Learning Go","author":{"name":"Josh Lowrance","age":28,"is_developer":true}}
+	fmt.Printf("%+v\n", reading)
 }
