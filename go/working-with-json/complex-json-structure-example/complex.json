@@ -1,0 +1,69 @@
+{
+    "success": true,
+    "results": {
+      "locations": [
+        {
+          "id": 3444074,
+          "name": "Green Alley Salon",
+          "lat": "30.4488126",
+          "lng": "-97.7484819",
+          "phone": "(512) 331-9555",
+          "email": "Sirensalon49@yahoo.com",
+          "url": "http://www.greenalleysalon.com",
+          "slug": "green-alley-salon-austin-tx",
+          "visible": 1,
+          "marker_id": null,
+          "address": "6905 Dallas Dr , Austin, TX, 78729",
+          "display_address": "6905 Dallas Dr , Austin, TX, 78729",
+          "address_line_1": "6905 Dallas Dr ",
+          "address_line_2": "",
+          "city": "Austin",
+          "state": "TX",
+          "postcode": "78729",
+          "country": "",
+          "location_type_id": 3022,
+          "timezone": "America/Matamoros",
+          "facebook": null,
+          "instagram": null,
+          "twitter": null,
+          "yelp_id": null,
+          "location_type_name": "Standard",
+          "priority": 1,
+          "location_type_show_label": 0,
+          "marker_image": null,
+          "mon": null,
+          "tue": null,
+          "wed": null,
+          "thu": null,
+          "fri": null,
+          "sat": null,
+          "sun": null,
+          "filters": [],
+          "fields": [],
+          "callsToAction": [],
+          "images": [],
+          "cover_image": null,
+          "locationType": {
+            "id": 3022,
+            "name": "Standard",
+            "priority": 1,
+            "show_label": 0
+          },
+          "marker": {
+            "id": null,
+            "image": null
+          },
+          "hours": {
+            "mon": null,
+            "tue": null,
+            "wed": null,
+            "thu": null,
+            "fri": null,
+            "sat": null,
+            "sun": null
+          },
+          "obf_id": "Or85N5B5pN"
+        }
+      ]
+    }
+}
