@@ -81,14 +81,6 @@ func newDeckFromFile(fileName string) deck {
 // the go standard library does not have a function to shuffle a slice.
 // this should be a receiver function so we can call deck.shuffle.
 // nothing is returned from this function.
-// take note of the last four cards that are shuffled, something is not right here.
-//
-// why does the shuffle function not shuffle all cards?..
-// because the same seed value is being used with rand.Intn.
-// to resolve this you need to change the seed value.
-// see type Rand in the documentation, this is where you go down a rabbit hole...
-// alot of learning Go is navigating the documentation.
-
 func (d deck) shuffle() {
 	for i := range d {
 		newPosition := rand.Intn(len(d) - 1)        // new position is a random int that is in the range of the size of the deck.
