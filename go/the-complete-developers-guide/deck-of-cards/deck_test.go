@@ -26,4 +26,3 @@ func TestNewDeck(t *testing.T) { // tests will always have
 }
 
 // run `go test` in your terminal to run all files ending in `_test.go`.
-//
