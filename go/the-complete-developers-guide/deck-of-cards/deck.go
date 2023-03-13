@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil" // this is a sub-package inside the io package.
 	"strings"
 )
 
@@ -37,4 +38,13 @@ func (d deck) toString() string {
 	// we can do this because deck is of type slice of stirng.
 	// converts ["red", "yellow", "blue"] to "red, yellow, blue".
 	return strings.Join([]string(d), ",")
+}
+
+// we want to run deck.saveToFile so we will add a receiver of type deck.
+// the WriteFile() function requires a string for the fileName.
+// we should return the error that might be produced, error is a type.
+// anyone can read or write to this file (0666).
+// return the whole expression.
+func (d deck) saveToFile(fileName string) error {
+	return ioutil.WriteFile(fileName, []byte(d.toString()), 0666)
 }
