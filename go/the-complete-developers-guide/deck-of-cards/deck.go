@@ -23,3 +23,7 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+func deal(d deck, handSize int) (deck, deck) { // (deck, deck) == return two values, both of type deck.
+	return d[:handSize], d[handSize:]
+}
