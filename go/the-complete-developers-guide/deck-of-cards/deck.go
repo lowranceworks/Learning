@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil" // this is a sub-package inside the io package.
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -75,4 +76,22 @@ func newDeckFromFile(fileName string) deck {
 	// see line 10, deck is a slice of type string with additional functions.
 	// hover over line 77 to see the functions available, these are the receiver functions created from earlier.
 	return deck(s)
+}
+
+// the go standard library does not have a function to shuffle a slice.
+// this should be a receiver function so we can call deck.shuffle.
+// nothing is returned from this function.
+// take note of the last four cards that are shuffled, something is not right here.
+//
+// why does the shuffle function not shuffle all cards?..
+// because the same seed value is being used with rand.Intn.
+// to resolve this you need to change the seed value.
+// see type Rand in the documentation, this is where you go down a rabbit hole...
+// alot of learning Go is navigating the documentation.
+
+func (d deck) shuffle() {
+	for i := range d {
+		newPosition := rand.Intn(len(d) - 1)        // new position is a random int that is in the range of the size of the deck.
+		d[i], d[newPosition] = d[newPosition], d[i] // swaps current position with new position.
+	}
 }
