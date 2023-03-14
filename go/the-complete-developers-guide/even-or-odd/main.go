@@ -8,8 +8,7 @@ func main() {
 	for _, n := range numbers {
 		if n%2 == 0 {
 			fmt.Printf("%d is even\n", n)
-		}
-		if n%2 != 0 {
+		} else {
 			fmt.Printf("%d is odd\n", n)
 		}
 	}
